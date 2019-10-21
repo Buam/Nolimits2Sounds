@@ -1,0 +1,44 @@
+package sounds;
+
+import com.nolimitscoaster.*;
+import nlvm.lang.Math;
+
+import api.*;
+import lib.*;
+
+public class RMCRoar extends TrackedSound implements TrackTriggerListener
+{
+	private Coaster c;
+	private StaticSound airtime1;
+	private StaticSound airtime2;
+
+	public RMCRoar(Simulator sim, Coaster coaster)
+	{
+		c = coaster;
+
+		airtime1 = StaticSound.loadFromResourceId("rmc_airtime1", 0);
+		airtime2 = StaticSound.loadFromResourceId("rmc_airtime2", 0);
+
+		super(sim, coaster, Sections.RMC_ROAR);
+	}
+
+	public bool shouldPlay(Coaster coaster, Train train)
+	{
+		return true;
+	}
+
+	public void onFrame(StaticSound sound, Train train)
+	{
+		sound.setDistanceParameters((float)Math.abs(train.getSpeed()*2),2.0f);
+		sound.setPitch((float)Math.abs(train.getSpeed()/20));
+		sound.setGain((float)Math.abs(train.getSpeed()*200));
+	}
+
+	void onTrainEntering(TrackTrigger trigger, Train train) {
+		if(Math.random() == 0) {
+			airtime1.play();
+		} else {
+			airtime2.play();
+		}
+	}
+}

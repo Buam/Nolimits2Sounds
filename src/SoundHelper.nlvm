@@ -48,6 +48,19 @@ public class SoundHelper
 			soundFound = true;
 		}
 
+		if(hasSound(coaster, Sections.RMC_ROAR)) {
+			RMCRoar roar = new RMCRoar(sim, coaster);
+
+			for(int i = 0; i<255; i++) {
+				TrackTrigger t = coaster.getTrackTrigger("RMCA"+i);
+				if(t != null) {
+					t.addTrackTriggerListener(roar);
+				} else {
+					break;
+				}
+			}
+		}
+
 		// JET
 		if(hasSound(coaster, Sections.JET_FUNKY_LIFT))
 		{

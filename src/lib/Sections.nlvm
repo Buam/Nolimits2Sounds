@@ -11,6 +11,9 @@ public class Sections
 	public static final String GCI_LIFT = "gci_lift";
 
 	public static final String RMC_LIFT = "rmc_lift";
+	public static final String RMC_ROAR = "rmc_roar";
+	public static final String RMC_AIRTIME1 = "rmc_airtime1";
+	public static final String RMC_AIRTIME2 = "rmc_airtime2";
 
 	public static final String JET_FUNKY_LIFT = "jet_funky_lift";
 	public static final String JET_ROAR = "jet_roar";

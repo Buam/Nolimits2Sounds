@@ -13,6 +13,9 @@
     <resource id="gci_lift">assets/gci/lifthill.ogg</resource>
 
     <resource id="rmc_lift">assets/rmc/lifthill.ogg</resource>
+    <resource id="rmc_roar">assets/rmc/roar.ogg</resource>
+    <resource id="rmc_airtime1">assets/rmc/airtim1.ogg</resource>
+    <resource id="rmc_airtime2">assets/rmc/airtime2.ogg</resource>
 
     <resource id="jet_funky_lift">assets/jet/funky_lift.ogg</resource>
     <resource id="jet_roar">assets/jet/roar.ogg</resource>
